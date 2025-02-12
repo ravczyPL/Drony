@@ -22,14 +22,5 @@ jobs:
           passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }} # Jeśli klucz ma hasło
           source: ./ # Folder lokalny do wysłania (np. wp-content, lub cała strona jeśli chcesz)
           target: ${{ secrets.SSH_TARGET_DRONY }}  # Docelowy folder na serwerze
-
-      - name: Clear WordPress cache (optional)
-        run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << EOF
-            echo "Clearing WordPress cache..."
-            cd ${{ secrets.SSH_TARGET }}
-            wp cache flush  # Jeśli masz zainstalowane wp-cli
-            echo "Cache cleared"
-          EOF
       - name: Deploy complete
         run: echo "Deployment complete!"
