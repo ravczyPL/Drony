@@ -1,39 +1,50 @@
 <?php get_header(); ?>
 
-<!-- Sekcja Hero -->
-<section class="hero">
-    <img src="path-to-your-image.jpg" alt="Drone">
-    <div class="hero-text">
-        <h1>Profesjonalne usługi nagrywania filmów dronem</h1>
-        <p>Oferujemy nagrania dronem DJI Mini 3 w najwyższej jakości</p>
-        <a href="#contact" class="btn">Skontaktuj się z nami</a>
-    </div>
-</section>
-
-<!-- Sekcja Usług -->
-<section class="services">
-    <h2>Nasze usługi</h2>
-    <div class="service">
-        <img src="path-to-service-image.jpg" alt="Usługa 1">
-        <h3>Nagrania w jakości 4K</h3>
-        <p>Tworzymy profesjonalne filmy w wysokiej jakości 4K.</p>
-    </div>
-    <div class="service">
-        <img src="path-to-service-image.jpg" alt="Usługa 2">
-        <h3>Ujęcia z powietrza</h3>
-        <p>Wykonujemy spektakularne ujęcia z lotu ptaka.</p>
-    </div>
-</section>
-
-<!-- Sekcja Kontaktowa -->
-<section id="contact" class="contact">
-    <h2>Skontaktuj się z nami</h2>
-    <form action="" method="post">
-        <input type="text" name="name" placeholder="Imię" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Twoja wiadomość" required></textarea>
-        <button type="submit">Wyślij wiadomość</button>
-    </form>
-</section>
+<main class="site-main">
+    <!-- Sekcja Hero -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.jpg" alt="Banner Dron">
+            <div class="hero-content">
+                <h1>Nowoczesne Nagrania Dronem</h1>
+                <p>Profesjonalne filmy i zdjęcia z powietrza</p>
+                <a href="#contact" class="btn">Skontaktuj się</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sekcja Usług -->
+    <section class="services">
+        <div class="container">
+            <h2>Nasze Usługi</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service1.jpg" alt="Nagrania 4K">
+                    <h3>Nagrania 4K</h3>
+                    <p>Profesjonalne filmy w jakości 4K.</p>
+                </div>
+                <div class="service-item">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service2.jpg" alt="Ujęcia z lotu ptaka">
+                    <h3>Ujęcia z powietrza</h3>
+                    <p>Spektakularne zdjęcia z lotu ptaka.</p>
+                </div>
+                <!-- Dodaj kolejne usługi według potrzeb -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sekcja Kontakt -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontakt</h2>
+            <form action="" method="post" class="contact-form">
+                <input type="text" name="name" placeholder="Twoje imię" required>
+                <input type="email" name="email" placeholder="Twój email" required>
+                <textarea name="message" placeholder="Twoja wiadomość" required></textarea>
+                <button type="submit" class="btn">Wyślij</button>
+            </form>
+        </div>
+    </section>
+</main>
 
 <?php get_footer(); ?>

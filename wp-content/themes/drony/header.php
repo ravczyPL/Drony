@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo( 'name' ); ?> | Strona wizytówka</title>
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?php wp_title('|', true, 'right'); ?></title>
+    <link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri() ); ?>">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-
-<!-- Nagłówek -->
-<header>
-    <div class="logo">
-        <a href="<?php echo home_url(); ?>">
-            <img src="path-to-your-logo.png" alt="Logo">
-        </a>
+<header class="site-header">
+    <div class="container header-container">
+        <div class="site-branding">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="<?php bloginfo('name'); ?>">
+            </a>
+        </div>
+        <nav class="main-navigation">
+            <?php 
+            wp_nav_menu( array(
+                'theme_location' => 'primary',
+                'menu_class'     => 'primary-menu',
+                'container'      => false,
+            ) ); 
+            ?>
+        </nav>
     </div>
-    <nav>
-        <ul class="menu">
-            <li><a href="<?php echo home_url(); ?>">Strona Główna</a></li>
-            <li><a href="#services">Usługi</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-    </nav>
 </header>
