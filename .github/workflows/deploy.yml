@@ -31,15 +31,5 @@ jobs:
             wp cache flush  # Jeśli masz zainstalowane wp-cli
             echo "Cache cleared"
           EOF
-
-      - name: Restart web server (optional)
-        run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << EOF
-            echo "Restarting web server..."
-            sudo systemctl restart apache2  # Jeśli używasz Apache
-            # sudo systemctl restart nginx  # Jeśli używasz Nginx
-            echo "Web server restarted"
-          EOF
-
       - name: Deploy complete
         run: echo "Deployment complete!"
