@@ -1,6 +1,8 @@
+<!-- Stopka -->
 <footer>
-    <p>&copy; <?php echo date("Y"); ?> Nagrywanie dronem DJI Mini 3</p>
+    <p>&copy; <?php echo date('Y'); ?> - Wszelkie prawa zastrzeżone</p>
 </footer>
+
 <?php wp_footer(); ?>
 </body>
 </html>
